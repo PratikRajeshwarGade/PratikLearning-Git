@@ -1,0 +1,54 @@
+0. git init: initialise a empty directory as a git repository
+1. git add *
+2. git commit -m "any message you can type here"
+3. git restore --staged hello.txt : if I added and I dont want to add this file
+4. del hello.txt / rm -rf hello.txt : to delete a file from folder
+5. git stash : the changes I have made but dont want to push/commit/add I can do with this commend  
+6. git stash pop: we can pop the stash changes to add/commit/push
+7. git stash clear: if I dont want those changes or file at that time I can do with this command
+8. git remote add origin <git repository URL> : to add repo to your project
+9. git remote -v : this will show what are the urls attached to the folder
+10.git push origin master: to push the changes on git
+11. what is Branch?
+12. what is HEAD in .git folder?
+--> HEAD is a pointer which pointing to the current Branch and whatever the changes are made will inserted on that pointing Branch  
+13. if you want to contribute to open source projects then you can not get their access you have to foked that project into your repository. 
+    then you are able to make changes in that project. and whiya pull request you can review your code and contribute to it.
+	1. after foked that project you can clone it into your PC.
+	2. from where you have foked that project its known as upstream URL by convenshion
+	3. you can add upstream URL by below command
+		git remot add upstream <url from where you have foked a project>
+		git remote -v : tho check URL is added or not
+
+14. git checkout <branch name> : this comand is to move HEAR to another Branch
+15. git branch <new branch name> : to create a new branch
+16. to saty updated with upstream like from when you pull after that some other person push some code and you want it in your repository 
+    then you can do it with below commands:
+	1. git fetch --all --prune OR
+	2. git reset --hard upstream/main OR after this you have to push those changes whatever you have pull with this command to your repository 
+					     from your local folder: Now you can see your repository and upstream repository is same 
+	3. git pull upstream main 
+
+17. mearge conflicts: when you and someone else has made a changes on same line of code and you both raise PR at that time mearge conflict raise.
+		      it can resolve manually.
+18. git rebase -i <hash id of commit>: squashing your commits (mearge multiple commits into a single one) it will open screen having
+     					pick <hash id of commit> <file name>
+     					pick <hash id of commit> <file name>
+     					pick <hash id of commit> <file name>
+     					pick <hash id of commit> <file name>
+
+					YOU HAVE TO CHANG IT TO (pick with s(s id for squashing)) so all s commits will mearge into above commit
+
+					     pick <hash id of commit> <file name>
+     					     s <hash id of commit> <file name>
+     					     s <hash id of commit> <file name>
+     					     pick <hash id of commit> <file name>
+					pick:- you are taking this commit/ I want this commit
+					squash:- means above s which ever pick you have mearge it in that
+					
+					To exit from that screen esc --> : --> x --> Now it will allow you to create a message for a new commit.
+										     insert aftre this add message
+
+19. git push -f origin master to push removed/sqush/drop commits or make commits push on origin (That should "undo" the push also.) 
+
+
